@@ -14,6 +14,11 @@ fullFrame <- rbind(testFrame,trainFrame)
 ## Import plyr and dplyr and get to work!
 library(plyr)
 library(dplyr)
+## Make the magic happen!
+### Slice out the stuff that doesn't matter from the full frame
 
+
+## Create the final version of the data frame
+finalFrame <- some(stuff, happens)
 ## Output the final data frame
 write(finalFrame, "stuff?")
