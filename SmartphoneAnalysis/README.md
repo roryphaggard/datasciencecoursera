@@ -1,5 +1,4 @@
 ## How To Use run_analysis.R
-
 1. Begin by downloading the "Human Activity Recognition Using Smartphones Data Set" from the
 UCI Machine Learning [repository](http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip)
 1. Unzip the dataset to a directory on your local machine
