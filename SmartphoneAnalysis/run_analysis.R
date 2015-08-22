@@ -7,14 +7,13 @@ runAnalysis <- function() {
     xTest <- read.table("UCI HAR Dataset/test/X_test.txt")
     yTest <- read.table("UCI HAR Dataset/test/y_test.txt")
 
-## Import plyr and get to work!
-    library(plyr)
+## Import dplyr and get to work!
     library(dplyr)
 ### Start renaming columns
-    trainSubject <- rename(trainSubject, replace = c("V1" = "Subject"))
-    testSubject <- rename(testSubject, replace = c("V1" = "Subject"))
-    yTrain <- rename(yTrain, replace = c("V1" = "Movement"))
-    yTest <- rename(yTest, replace = c("V1" = "Movement"))
+    trainSubject <- rename(trainSubject, Subject = V1)
+    testSubject <- rename(testSubject, Subject = V1)
+    yTrain <- rename(yTrain, Movement = V1)
+    yTest <- rename(yTest, Movement = V1)
 ### Transform movement codes into actual movement names
     yTrain$Movement <- gsub("1", "Walking", yTrain$Movement)
     yTrain$Movement <- gsub("2", "Walking_Upstairs", yTrain$Movement)
@@ -51,7 +50,7 @@ runAnalysis <- function() {
                           "V425","V426","V427","V428","V429","V452","V453",
                           "V454","V503","V504","V513","V516","V517","V526",
                           "V529","V530","V539","V542","V543","V552")]
-### Renames all of the columns to be descriptive    
+### Rename all of the columns to be suitably descriptive
     xTrainFrame <- rename(xTrainFrame, triaxialBodyAccMeanXAxis = V1,
                           triaxialBodyAccMeanYAxis = V2,
                           triaxialBodyAccMeanZAxis = V3,
@@ -210,9 +209,10 @@ runAnalysis <- function() {
                          frequencyBodyAccJerkMagStandardDeviation = V517,
                          frequencyBodyGyroMagStandardDeviation = V530,
                          frequencyBodyGyroJerkMagStandardDeviation = V543)
-
 ## Create the final version of the data frame
-finalFrame <- some(stuff, happens)
+    testData <- cbind(testSubject,yTest,xTestFrame)
+    trainData <- cbind(trainSubject,yTrain,xTrainFrame)
+    finalFrame <- rbind(testData,trainData)
 ## Output the final data frame
 write(finalFrame, "stuff?")
 }
