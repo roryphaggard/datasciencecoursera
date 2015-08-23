@@ -213,7 +213,9 @@ runAnalysis <- function() {
     testData <- cbind(testSubject,yTest,xTestFrame)
     trainData <- cbind(trainSubject,yTrain,xTrainFrame)
     finalFrame <- rbind(testData,trainData)
-## Output the final data frame
+    ## Sort finalFrame by subject and movement type
+    finalFrame <- finalFrame[order(finalFrame$Subject,finalFrame$Movement),]
+## Output the final data frame to a text file
 write(finalFrame, "stuff?")
 }
 #testFrame <- cbind(testSubject,yTest,xTest)
