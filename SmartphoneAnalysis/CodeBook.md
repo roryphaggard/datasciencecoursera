@@ -1,4 +1,4 @@
-# Code Book for UCI HAR Dataset and run_analysis.R
+# Code Book for 'UCI HAR Data Set' and run_analysis.R
 
 ### About the Initial Dataset
 The initial dataset is the "UCI HAR Data Set" from the UCI Machine Learning [repository](http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip).  This data was colllected from 30 volunteers with the aid of the ssensors onboard Samsung Galaxy SII smartphones.  The participants were asked to perform a number of different activities while being recorded on video.  
