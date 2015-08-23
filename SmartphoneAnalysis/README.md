@@ -8,6 +8,6 @@ UCI Machine Learning [repository](http://archive.ics.uci.edu/ml/machine-learning
 1. Type 'runAnalysis()' and press Enter
 1. The tidy dataset will be in a file named "tidy_dataset.txt"
 
-**NB**: run_analysis.R and "UCI HAR Data" *must* to be the same directory in order for this script to work.
+**NB**: 'run_analysis.R' and 'UCI HAR Data' *must* to be the same directory in order for this script to work.
 
 ##### See the file 'CodeBook.md' for further details on the transformations and assumptions made.
